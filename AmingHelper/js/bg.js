@@ -1,6 +1,6 @@
 function SetbtnIcon() {
 	chrome.browserAction.setIcon({
-		path: "d_16.png"
+		path: "images/icon_16.png"
 	});
 }
 
@@ -27,7 +27,7 @@ chrome.extension.onRequest.addListener(
 		switch (request.type) {
 			case "notif":
 				var notification = window.webkitNotifications.createNotification(
-					'48.png', // The image.
+					'images/icon_48.png', // The image.
 					request.title, // The title.
 					request.body // The body.
 				);

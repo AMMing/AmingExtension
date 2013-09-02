@@ -46,13 +46,13 @@ BaiduEx = {
 			$kw.css("background-color", "rgba(255, 255, 255, 0.8)");
 
 			//set search div end
-			$sdiv.before("<div id='new_nav' style='position: fixed;top: 0;left: 0;'></div>");
+			$sdiv.before("<div id='new_nav' style='position: fixed;top: 0;left: 0;z-index: 99;'></div>");
 			BaiduEx.CreateNav();
-			BaiduEx.New_nav_obj.delay(800).shownav(function() {
-				// show search div
-				$sdiv.animate({
-					"margin-top": 150
-				}, 800, "easeInOutQuart");
+			// show search div
+			$sdiv.animate({
+				"margin-top": 100
+			}, 800, "easeInOutQuart", function() {
+				BaiduEx.New_nav_obj.shownav();
 			});
 
 		}); //hide all
