@@ -1,9 +1,16 @@
 var BaiduEx = new function() {};
 BaiduEx = {
-	bg_imgurl: "",
+	key: "baidu",
+	localdata: {},
 	New_nav_obj: null,
+	init: function() {
+		Aming.getData(BaiduEx.key, function(data) {
+			BaiduEx.localdata = data;
+			BaiduEx.Page();
+		});
+	},
 	Page: function() {
-		window.title = "摆渡一下,你就知道";
+		document.title = "摆渡一下,你就知道";
 		$("body >*").animate({
 			"opacity": 0
 		}, "slow");
@@ -12,8 +19,8 @@ BaiduEx = {
 			"margin-top": 150
 		}, 800, function() {
 			var $bg = $(".s-skin-container");
-			if (BaiduEx.bg_imgurl != "") {
-				$bg.css("background-image", "url('" + BaiduEx.bg_imgurl + "')");
+			if (BaiduEx.localdata.bg != "") {
+				$bg.css("background-image", "url('" + BaiduEx.localdata.bg + "')");
 			}
 			$bg.animate({
 				"opacity": 1
@@ -58,15 +65,6 @@ BaiduEx = {
 		}); //hide all
 
 	},
-	Get_Data: function(callback) {
-		chrome.extension.sendRequest({
-			type: "bgurl"
-		}, function(response) {
-			console.log(response);
-			BaiduEx.bg_imgurl = response;
-			callback();
-		});
-	},
 	CreateNav: function() {
 		this.New_nav_obj = $("#new_nav").aming_nav({
 			datalist: [{
@@ -103,3 +101,12 @@ BaiduEx = {
 		});
 	}
 };
+
+
+Aming.addFunc({
+	key: "http://www.baidu.com/",
+	similar: false,
+	val: function() {
+		setTimeout(BaiduEx.init, 200);
+	}
+});

@@ -1,7 +1,10 @@
 var AmingHelper = new function() {};
 AmingHelper = {
-	Select_Page: function() {
+	js_list: new Array(),
+	Init: function() {
 		var pageurl = document.location.href;
+
+		debugger;
 
 		switch (pageurl) {
 			case "http://www.baidu.com/":
@@ -14,7 +17,9 @@ AmingHelper = {
 
 
 $(document).ready(function() {
-	BaiduEx.Get_Data(function() {
-		setTimeout(AmingHelper.Select_Page, 200);
-	});
+	// BaiduEx.Get_Data(function() {
+	// 	setTimeout(AmingHelper.Select_Page, 200);
+	// });
+
+	AmingHelper.Init();
 });
