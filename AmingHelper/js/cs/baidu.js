@@ -118,13 +118,13 @@ BaiduEx = {
 				title: "[Tieba]贴吧",
 				link: $("#nv a:contains('贴吧')").attr("href")
 			}, {
-				left: -100,
+				left: -20,
 				color: "#7D52AE",
 				imgurl: BaiduEx.localdata.nav2,
 				title: "[ZhiDao]知道",
 				link: $("#nv a:contains('知道')").attr("href")
 			}, {
-				left: -90,
+				left: -140,
 				color: "#4E69AE",
 				imgurl: BaiduEx.localdata.nav3,
 				title: "[Pictures]图片",
@@ -136,7 +136,7 @@ BaiduEx = {
 				title: "[Maps]地图",
 				link: $("#nv a:contains('地图')").attr("href")
 			}, {
-				left: -180,
+				left: -30,
 				color: "#4CAC2A",
 				imgurl: BaiduEx.localdata.nav5,
 				title: "[More]更多",

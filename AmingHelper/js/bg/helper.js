@@ -11,5 +11,11 @@ localData = {
 	},
 	Delete: function(key) {
 		window.localStorage.removeItem(key);
+	},
+	Init: function(key, data) {
+		var val = this.Get(key);
+		if (!val) {
+			this.Set(key, data);
+		}
 	}
 };

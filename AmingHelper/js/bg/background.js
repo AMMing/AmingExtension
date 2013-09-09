@@ -1,5 +1,5 @@
 chrome.browserAction.setIcon({
-	path: "images/icon_16.png"
+	path: "images/16.jpg"
 });
 
 chrome.extension.onRequest.addListener(
@@ -7,13 +7,13 @@ chrome.extension.onRequest.addListener(
 		switch (request.type) {
 			case "notif":
 				var notification = window.webkitNotifications.createNotification(
-					'images/icon_48.png', // The image.
+					'images/64.jpg', // The image.
 					request.title, // The title.
 					request.body // The body.
 				);
 				notification.show();
 				sendResponse({
-					msg: "notification show. "
+					msg: "notification show."
 				});
 				break;
 			case "data":

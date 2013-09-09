@@ -5,36 +5,67 @@
 	<title></title>
 	<script type="text/javascript" src="js/bg/helper.js"></script>
 	<script type="text/javascript" src="js/opt/options.js"></script>
+	<style >
+	*{
+		font-family: 'Microsoft YaHei',Arial, Helvetica, sans-serif;
+	}
+	body{
+		width: 1000px;
+		margin:100px auto;
+		
+	}
+	.row{
+		height: 40px;
+	}
+	</style>
 </head>
 <body>
+	<div>
+		<img src="images/128.jpg" style="float:left;">
+		<span style="float:left;margin-top: 100px;margin-left: 10px;font-size: 22px;">AMingHelper</span>
+	</div>
+	<div style="clear:left;"></div>
+	<br/>
+	<br/>
+	<div class="row">
 	<label for="txt_bg">背景图片地址</label>
-	<input type="text" id="txt_bg" value="" style="width: 90%;" />
-	<br/>
+	<input type="text" id="txt_bg" value="" style="width: 87.8%;" />
+	</div>
+	<div class="row">
 	<label for="txt_bg">搜索栏背景图片地址</label>
-	<input type="text" id="txt_sbg" value="" style="width: 80%;" />
-	<br/>
+	<input type="text" id="txt_sbg" value="" style="width: 83%;" />
+	</div>
+	<div class="row">
 	<label for="txt_bg">[导航]贴吧</label>
 	<input type="text" id="txt_nav1" value="" style="width: 90%;" />
-	<br/>
+	</div>
+	<div class="row">
 	<label for="txt_bg">[导航]知道</label>
 	<input type="text" id="txt_nav2" value="" style="width: 90%;" />
-	<br/>
+	</div>
+	<div class="row">
 	<label for="txt_bg">[导航]图片</label>
 	<input type="text" id="txt_nav3" value="" style="width: 90%;" />
-	<br/>
+	</div>
+	<div class="row">
 	<label for="txt_bg">[导航]地图</label>
 	<input type="text" id="txt_nav4" value="" style="width: 90%;" />
-	<br/>
+	</div>
+	<div class="row">
 	<label for="txt_bg">[导航]更多</label>
 	<input type="text" id="txt_nav5" value="" style="width: 90%;" />
-	<br/>
+	</div>
+	<div class="row">
 
 	<label for="isShowSbg">显示搜索栏背景</label>
     <input id="isShowSbg" type="checkbox" name="isShowSbg" checked>
-	<br/>
+	</div>
+	<div class="row">
 	<label for="isShowNav">显示导航栏</label>
     <input id="isShowNav" type="checkbox" name="isShowNav" checked>
-	<br/>
-<font color="red">导航的图片规格为400*100，搜索栏背景为720*220</font>
+	</div>
+	<div class="row">
+	<font color="red">导航的图片规格为400*100，搜索栏背景为720*220</font>
+	</div>
 </body>
 </html>

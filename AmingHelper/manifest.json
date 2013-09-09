@@ -1,6 +1,6 @@
 {
   "name": "AMing,自写自用",
-  "version": "1.0.0.2",
+  "version": "1.0.0.3",
   "description": "自写自用，有爱自取.",
   "background": {
     "scripts": ["js/bg/helper.js", "js/bg/initdata.js", "js/bg/background.js"]
@@ -10,10 +10,10 @@
   },
   "options_page": "options.html",
   "icons": {
-    "16": "images/icon_16.png",
-    "48": "images/icon_48.png",
-    "64": "images/icon_64.png",
-    "128": "images/icon_128.png"
+    "16": "images/16.jpg",
+    "48": "images/48.jpg",
+    "64": "images/64.jpg",
+    "128": "images/128.jpg"
   },
   "content_scripts": [{
     "matches": ["http://*/*", "https://*/*"],
