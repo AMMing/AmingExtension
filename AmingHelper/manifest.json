@@ -1,6 +1,6 @@
 {
   "name": "AMing,自写自用",
-  "version": "1.0.0.4",
+  "version": "1.0.2.1",
   "description": "自写自用，有爱自取.",
   "background": {
     "scripts": ["js/bg/helper.js", "js/bg/initdata.js", "js/bg/background.js"]
