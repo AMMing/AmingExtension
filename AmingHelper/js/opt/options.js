@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
 	var baidu = localData.Get("baidu");
-
+	/*baidu*/
 	txt_bg.value = baidu.bg;
 	txt_sbg.value = baidu.sbg;
 	txt_nav1.value = baidu.nav1;
@@ -8,10 +8,14 @@ window.addEventListener('load', function() {
 	txt_nav3.value = baidu.nav3;
 	txt_nav4.value = baidu.nav4;
 	txt_nav5.value = baidu.nav5;
-
-
 	isShowSbg.checked = baidu.isShowSbg;
 	isShowNav.checked = baidu.isShowNav;
+
+	/*to top*/
+	var all = localData.Get("all");
+	txt_totop_bg.value = all.totop_bg;
+	isShowToTop.checked = all.isShowToTop;
+
 
 	txt_bg.onchange = function() {
 		baidu.bg = txt_bg.value;
@@ -49,5 +53,17 @@ window.addEventListener('load', function() {
 	isShowNav.onchange = function() {
 		baidu.isShowNav = isShowNav.checked;
 		localData.Set("baidu", baidu);
+	};
+
+	/*to top*/
+
+	txt_totop_bg.onchange = function() {
+		all.totop_bg = txt_totop_bg.value;
+		localData.Set("all", all);
+	};
+
+	isShowToTop.onchange = function() {
+		all.isShowToTop = isShowToTop.checked;
+		localData.Set("all", all);
 	};
 });

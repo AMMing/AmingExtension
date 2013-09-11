@@ -1,71 +1,131 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title></title>
-	<script type="text/javascript" src="js/bg/helper.js"></script>
-	<script type="text/javascript" src="js/opt/options.js"></script>
-	<style >
-	*{
-		font-family: 'Microsoft YaHei',Arial, Helvetica, sans-serif;
-	}
-	body{
-		width: 1000px;
-		margin:100px auto;
-		
-	}
-	.row{
-		height: 40px;
-	}
-	</style>
+    <title></title>
+    <script type="text/javascript" src="js/bg/helper.js"></script>
+    <script type="text/javascript" src="js/opt/options.js"></script>
+    <style>
+        * {
+            font-family: 'Microsoft YaHei',Arial, Helvetica, sans-serif;
+            color: #555;
+        }
+
+        body {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .row {
+            height: 40px;
+        }
+
+        .group {
+            border: 4px solid #0CF;
+            padding: 0px 20px 40px 20px;
+            margin: 20px 0;
+        }
+
+        .title {
+            margin: 0 0 20px -20px;
+            border-bottom: 4px solid #0CF;
+            height: 40px;
+            line-height: 40px;
+            font-size: 20px;
+            text-indent: 10px;
+            color: #0CF;
+        }
+
+        .red {
+            color: #FF3737;
+        }
+
+        .logo {
+            margin-top: 40px;
+        }
+
+            .logo img {
+                float: left;
+            }
+
+            .logo span {
+                float: left;
+                margin-top: 100px;
+                margin-left: 10px;
+                font-size: 22px;
+            }
+
+        .clear {
+            clear: both;
+        }
+    </style>
 </head>
 <body>
-	<div>
-		<img src="images/128.jpg" style="float:left;">
-		<span style="float:left;margin-top: 100px;margin-left: 10px;font-size: 22px;">AMingHelper</span>
-	</div>
-	<div style="clear:left;"></div>
-	<br/>
-	<br/>
-	<div class="row">
-	<label for="txt_bg">背景图片地址</label>
-	<input type="text" id="txt_bg" value="" style="width: 87.8%;" />
-	</div>
-	<div class="row">
-	<label for="txt_bg">搜索栏背景图片地址</label>
-	<input type="text" id="txt_sbg" value="" style="width: 83%;" />
-	</div>
-	<div class="row">
-	<label for="txt_bg">[导航]贴吧</label>
-	<input type="text" id="txt_nav1" value="" style="width: 90%;" />
-	</div>
-	<div class="row">
-	<label for="txt_bg">[导航]知道</label>
-	<input type="text" id="txt_nav2" value="" style="width: 90%;" />
-	</div>
-	<div class="row">
-	<label for="txt_bg">[导航]图片</label>
-	<input type="text" id="txt_nav3" value="" style="width: 90%;" />
-	</div>
-	<div class="row">
-	<label for="txt_bg">[导航]地图</label>
-	<input type="text" id="txt_nav4" value="" style="width: 90%;" />
-	</div>
-	<div class="row">
-	<label for="txt_bg">[导航]更多</label>
-	<input type="text" id="txt_nav5" value="" style="width: 90%;" />
-	</div>
-	<div class="row">
+    <div class="logo">
+        <img src="images/128.jpg">
+        <span>AMingHelper</span>
+    </div>
+    <div class="clear"></div>
+    <br />
+    <br />
+    <div class="group">
+        <div class="title">
+            新版摆渡首页设置
+        </div>
+        <div class="row">
+            <label for="txt_bg">背景图片地址</label>
+            <input type="text" id="txt_bg" value="" style="width: 87.8%;" />
+        </div>
+        <div class="row">
+            <label for="txt_bg">搜索栏背景图片地址</label>
+            <input type="text" id="txt_sbg" value="" style="width: 83%;" />
+        </div>
+        <div class="row">
+            <label for="txt_bg">[导航]贴吧</label>
+            <input type="text" id="txt_nav1" value="" style="width: 90%;" />
+        </div>
+        <div class="row">
+            <label for="txt_bg">[导航]知道</label>
+            <input type="text" id="txt_nav2" value="" style="width: 90%;" />
+        </div>
+        <div class="row">
+            <label for="txt_bg">[导航]图片</label>
+            <input type="text" id="txt_nav3" value="" style="width: 90%;" />
+        </div>
+        <div class="row">
+            <label for="txt_bg">[导航]地图</label>
+            <input type="text" id="txt_nav4" value="" style="width: 90%;" />
+        </div>
+        <div class="row">
+            <label for="txt_bg">[导航]更多</label>
+            <input type="text" id="txt_nav5" value="" style="width: 90%;" />
+        </div>
+        <div class="row">
+            <label for="isShowSbg">显示搜索栏背景</label>
+            <input id="isShowSbg" type="checkbox" name="isShowSbg" checked>
+        </div>
+        <div class="row">
+            <label for="isShowNav">显示导航栏</label>
+            <input id="isShowNav" type="checkbox" name="isShowNav" checked>
+        </div>
+        <div class="row">
+            <span class="red">导航的图片规格为400*100，搜索栏背景为720*220</span>
+        </div>
 
-	<label for="isShowSbg">显示搜索栏背景</label>
-    <input id="isShowSbg" type="checkbox" name="isShowSbg" checked>
-	</div>
-	<div class="row">
-	<label for="isShowNav">显示导航栏</label>
-    <input id="isShowNav" type="checkbox" name="isShowNav" checked>
-	</div>
-	<div class="row">
-	<font color="red">导航的图片规格为400*100，搜索栏背景为720*220</font>
-	</div>
+    </div>
+
+    <div class="group">
+        <div class="title">
+            返回顶部设置
+        </div>
+        <div class="row">
+            <label for="txt_totop_bg">返回顶部按钮图片地址</label>
+            <input type="text" id="txt_totop_bg" value="" style="width: 81%;" />
+        </div>
+        <div class="row">
+            <label for="isShowSbg">启用</label>
+            <input id="isShowToTop" type="checkbox" name="isShowToTop" checked>
+        </div>
+    </div>
 </body>
 </html>

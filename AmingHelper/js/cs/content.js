@@ -5,7 +5,9 @@ Aming = {
 		var pageurl = document.location.href;
 
 		Aming.js_list.forEach(function(item) {
-			if (pageurl.indexOf(item.key) >= 0) {
+			if (item.key == "*") {
+				item.val();
+			} else if (pageurl.indexOf(item.key) >= 0) {
 				if (item.similar == true || pageurl == item.key) {
 					item.val();
 				}
@@ -20,7 +22,7 @@ Aming = {
 			type: "data",
 			key: key
 		}, function(response) {
-			console.log(response);
+			// console.log(response);
 			callback(response);
 		});
 	}

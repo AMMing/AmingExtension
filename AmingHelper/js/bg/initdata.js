@@ -12,4 +12,9 @@ function initData() {
 		isShowSbg: false,
 		isShowNav: true
 	});
+	localData.Init("all", {
+		totop_bg: "http://www.y2443.com/images/nav/to_top.png",
+		isShowToTop: true
+
+	});
 }

@@ -152,5 +152,6 @@ Aming.addFunc({
 	similar: false,
 	val: function() {
 		setTimeout(BaiduEx.init, 200);
+		// BaiduEx.init();
 	}
 });
