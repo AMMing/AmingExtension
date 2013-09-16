@@ -76,11 +76,11 @@
                 $nav_frame.css("padding", "5px");
 
                 $nav_img_button.css("position", "absolute");
-                $nav_img_button.css("width", "204px");
-                $nav_img_button.css("height", "104px");
+                $nav_img_button.css("width", "202px");
+                $nav_img_button.css("height", "102px");
                 $nav_img_button.css("z-index", "999");
                 $nav_img_button.css("overflow", "hidden");
-                $nav_img_button.css("border", "2px solid white");
+                // $nav_img_button.css("border", "2px solid white");
                 $nav_img_button.css("cursor", "pointer");
                 $nav_img_button.css("background-color", "white");
 

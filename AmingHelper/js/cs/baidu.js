@@ -7,6 +7,8 @@ BaiduEx = {
 		Aming.getData(BaiduEx.key, function(data) {
 			BaiduEx.localdata = data;
 			BaiduEx.Page();
+
+			setTimeout(BaiduEx.HideSkinBtn, 1000);
 		});
 	},
 	Page: function() {
@@ -143,6 +145,9 @@ BaiduEx = {
 				link: $("#nv a:contains('更多>>')").attr("href")
 			}]
 		});
+	},
+	HideSkinBtn: function() {
+		$('#s_bg_entrance').hide();
 	}
 };
 
@@ -151,7 +156,7 @@ Aming.addFunc({
 	key: "http://www.baidu.com/",
 	similar: false,
 	val: function() {
-		setTimeout(BaiduEx.init, 200);
-		// BaiduEx.init();
+		// setTimeout(BaiduEx.init, 200);
+		BaiduEx.init();
 	}
 });

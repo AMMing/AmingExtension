@@ -1,11 +1,11 @@
 ﻿/**
  * $.aming_nav
  * @extends jquery.1.7.1
- * @fileOverview 动态导航
+ * @fileOverview 回到顶部
  * @author 阿命
  * @email y2443@163.com
  * @site wwww.y2443.com
- * @version 1.0.0.0
+ * @version 1.0.0.1
  * @date 2013-09-11
  * Copyright (c) 2012-2013 AMing
  * @example
@@ -32,7 +32,7 @@ jQuery.extend(jQuery.easing, {
 
 (function(window, document, $, undefined) {
     $.extend($.fn, {
-        version: '1.0.0.0',
+        version: '1.0.0.1',
 
         aming_scrolltop: function(setting) { //默认值
             var sdata = $.extend({
@@ -46,35 +46,41 @@ jQuery.extend(jQuery.easing, {
             }, setting);
 
             /* creat div */
-            var $totop_frame = jQuery('<div class="totop_frame"></div>');
-            var $totop_content = jQuery('<div class="totop_content"></div>');
-            var $to_top = jQuery('<a class="to_top" href="javascript:void();"></a>');
+            var $totop_frame = jQuery('<div class="aming_totop_frame"></div>');
+            var $totop_content = jQuery('<div class="aming_totop_content"></div>');
+            var $to_top = jQuery('<a class="aming_to_top" href="javascript:void();"></a>');
             $totop_content.append($to_top);
             $totop_frame.append($totop_content);
             jQuery('body').append($totop_frame);
 
             /* set css */
-            $to_top.width(sdata.width);
-            $to_top.height(sdata.height);
-            $to_top.css('position', 'absolute');
-            $to_top.css('top', '-100px');
-            $to_top.css('right', '-70px');
-            $to_top.css('cursor', 'pointer');
-            $to_top.css('background', 'url(' + sdata.imgurl + ')');
-            $to_top.css('opacity', '0');
-            $to_top.css("box-shadow", "1px 1px 6px rgba(20, 20, 20, 0.9)");
+            $to_top.css({
+                width: sdata.width,
+                height: sdata.height,
+                position: 'absolute',
+                top: '-100px',
+                right: '-70px',
+                cursor: 'pointer',
+                background: 'url(' + sdata.imgurl + ')',
+                opacity: '0',
+                boxShadow: '1px 1px 6px rgba(20, 20, 20, 0.9)'
+            });
 
-            $totop_content.width(sdata.mainwidth);
-            $totop_content.css('height', '0');
-            $totop_content.css('margin', '0 auto');
-            $totop_content.css('position', 'relative');
+            $totop_content.css({
+                width: sdata.mainwidth,
+                height: '0',
+                position: 'relative',
+                margin: '0 auto'
+            });
 
-            $totop_frame.css('width', '100%');
-            $totop_frame.css('height', '0');
-            $totop_frame.css('position', 'fixed');
-            $totop_frame.css('bottom', '0');
-            $totop_frame.css('left', '0');
-            $totop_frame.css('z-index', '10000000000000000');
+            $totop_frame.css({
+                width: '100%',
+                height: '0',
+                position: 'fixed',
+                bottom: '0',
+                left: '0',
+                zIndex: '10000000000000000'
+            });
 
             /* set event */
             jQuery(window).bind('scroll', function() {

@@ -1,6 +1,6 @@
 {
   "name": "AMing,自写自用",
-  "version": "1.0.2.1",
+  "version": "1.0.2.5",
   "description": "自写自用，有爱自取.",
   "background": {
     "scripts": ["js/bg/helper.js", "js/bg/initdata.js", "js/bg/background.js"]
@@ -17,7 +17,7 @@
   },
   "content_scripts": [{
     "matches": ["http://*/*", "https://*/*"],
-    "js": ["js/core/jquery.js", "js/core/jquery.easing.1.3.js", "js/core/jquery.aming.nav.js", "js/core/jquery.aming.scrolltop.js", "js/cs/content.js", "js/cs/all.js", "js/cs/baidu.js"],
+    "js": ["js/core/jquery.js", "js/core/jquery.easing.1.3.js", "js/core/jquery.aming.nav.ex.js", "js/core/jquery.aming.scrolltop.js", "js/cs/content.js", "js/cs/all.js", "js/cs/baidu.js"],
     "all_frames": true
   }],
   "manifest_version": 2,

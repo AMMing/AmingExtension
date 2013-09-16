@@ -15,7 +15,7 @@ window.addEventListener('load', function() {
 	var all = localData.Get("all");
 	txt_totop_bg.value = all.totop_bg;
 	isShowToTop.checked = all.isShowToTop;
-
+	number_radius.value = all.radius;
 
 	txt_bg.onchange = function() {
 		baidu.bg = txt_bg.value;
@@ -64,6 +64,10 @@ window.addEventListener('load', function() {
 
 	isShowToTop.onchange = function() {
 		all.isShowToTop = isShowToTop.checked;
+		localData.Set("all", all);
+	};
+	number_radius.onchange = function() {
+		all.radius = number_radius.value;
 		localData.Set("all", all);
 	};
 });
