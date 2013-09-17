@@ -10,12 +10,7 @@ window.addEventListener('load', function() {
 	txt_nav5.value = baidu.nav5;
 	isShowSbg.checked = baidu.isShowSbg;
 	isShowNav.checked = baidu.isShowNav;
-
-	/*to top*/
-	var all = localData.Get("all");
-	txt_totop_bg.value = all.totop_bg;
-	isShowToTop.checked = all.isShowToTop;
-	number_radius.value = all.radius;
+	baidu_enabled.checked = baidu.enabled;
 
 	txt_bg.onchange = function() {
 		baidu.bg = txt_bg.value;
@@ -45,7 +40,6 @@ window.addEventListener('load', function() {
 		baidu.nav5 = txt_nav5.value;
 		localData.Set("baidu", baidu);
 	};
-
 	isShowSbg.onchange = function() {
 		baidu.isShowSbg = isShowSbg.checked;
 		localData.Set("baidu", baidu);
@@ -54,16 +48,23 @@ window.addEventListener('load', function() {
 		baidu.isShowNav = isShowNav.checked;
 		localData.Set("baidu", baidu);
 	};
+	baidu_enabled.onchange = function() {
+		baidu.enabled = baidu_enabled.checked;
+		localData.Set("baidu", baidu);
+	};
 
 	/*to top*/
+	var all = localData.Get("all");
+	txt_totop_bg.value = all.totop_bg;
+	totop_enabled.checked = all.enabled;
+	number_radius.value = all.radius;
 
 	txt_totop_bg.onchange = function() {
 		all.totop_bg = txt_totop_bg.value;
 		localData.Set("all", all);
 	};
-
-	isShowToTop.onchange = function() {
-		all.isShowToTop = isShowToTop.checked;
+	totop_enabled.onchange = function() {
+		all.enabled = totop_enabled.checked;
 		localData.Set("all", all);
 	};
 	number_radius.onchange = function() {

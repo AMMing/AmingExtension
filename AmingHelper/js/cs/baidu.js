@@ -6,9 +6,12 @@ BaiduEx = {
 	init: function() {
 		Aming.getData(BaiduEx.key, function(data) {
 			BaiduEx.localdata = data;
-			BaiduEx.Page();
-
-			setTimeout(BaiduEx.HideSkinBtn, 1000);
+			if (BaiduEx.localdata.enabled) {
+				if ($('.s-skin-container').length > 0) {
+					BaiduEx.Page();
+					setTimeout(BaiduEx.HideSkinBtn, 1000);
+				}
+			}
 		});
 	},
 	Page: function() {
@@ -42,6 +45,8 @@ BaiduEx = {
 			var $nv_a = $("#nv a,#nv b");
 			var $kw = $("#kw");
 			var $lg = $("#lg");
+			var $lgimg = $("#lg>img");
+			var $btn_wr = $(".btn_wr");
 
 			var $sdiv_bg = $("<div class='sdiv_bg'></div>");
 
@@ -57,7 +62,6 @@ BaiduEx = {
 			$sdiv_bg.css("background-color", "rgba(255, 255, 255, 0.4)");
 			$sdiv_bg.css("background-position", "center 0");
 			$sdiv_bg.css("background-repeat", "no-repeat");
-			// $sdiv_bg.css("background-attachment", "fixed");
 			$sdiv_bg.css("background-size", "cover");
 
 			if (BaiduEx.localdata.sbg != "") {
@@ -70,30 +74,17 @@ BaiduEx = {
 				}, "slow");
 			}
 
-
-
-			// $sdiv.css("background-color", "rgba(162, 158, 185, 0.35)");
-			// $sdiv.css("opacity", "1");
-			// $sdiv.css("border", "5px solid rgba(255, 255, 255, 0.15)");
-			// $sdiv.css("border-radius", "3px");
-			// $sdiv.css("background-color", "rgba(255, 255, 255, 0.4)");
-			// $sdiv.css("z-index", "999");
 			$sdiv.css("position", "relative");
-			// $sdiv.css("box-shadow", "1px 1px 6px rgba(234, 150, 255, 0.85)");
 
 			$nv_a.css("color", "#fff");
 
 			$lg.css("position", "relative");
 			$lg.css("z-index", "999");
-			// $nv_a.css("color", "#427FFF");
-			// $nv_a.css("font-size", "24px");
-			// $nv_a.css("font-family", "'Microsoft YaHei',Arial, Helvetica, sans-serif");
-			// $nv_a.css("text-shadow", "#fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0");
-			// $nv_a.css("text-decoration", "none");
 
 			$nv.css("text-indent", "12px");
-			// $nv.css("display", "none");
 			$kw.css("background-color", "rgba(255, 255, 255, 0.8)");
+			$lgimg.attr('src', 'http://su.bdimg.com/static/skin/img/logo_white.png');
+			$btn_wr.css('background-color', "transparent");
 
 			$nv.animate({
 				"height": 0,
@@ -107,6 +98,16 @@ BaiduEx = {
 
 			if (BaiduEx.localdata.isShowNav) {
 				BaiduEx.New_nav_obj.shownav();
+
+				$('.aming_nav_img').css('border', 'none');
+				$('.aming_nav_img_button').css({
+					height: '100px',
+					border: "4px solid rgba(255, 255, 255, 0.6)",
+					backgroundColor: "transparent",
+					boxShadow: "rgba(20, 20, 20, 0.9) 1px 1px 6px"
+
+				});
+				$('#new_nav').css("z-index", "1000000000");
 			}
 		}); //hide all
 
@@ -120,25 +121,25 @@ BaiduEx = {
 				title: "[Tieba]贴吧",
 				link: $("#nv a:contains('贴吧')").attr("href")
 			}, {
-				left: -20,
+				left: -160,
 				color: "#7D52AE",
 				imgurl: BaiduEx.localdata.nav2,
 				title: "[ZhiDao]知道",
 				link: $("#nv a:contains('知道')").attr("href")
 			}, {
-				left: -140,
+				left: -110,
 				color: "#4E69AE",
 				imgurl: BaiduEx.localdata.nav3,
 				title: "[Pictures]图片",
 				link: $("#nv a:contains('图片')").attr("href")
 			}, {
-				left: -150,
+				left: -160,
 				color: "#EC709E",
 				imgurl: BaiduEx.localdata.nav4,
 				title: "[Maps]地图",
 				link: $("#nv a:contains('地图')").attr("href")
 			}, {
-				left: -30,
+				left: -50,
 				color: "#4CAC2A",
 				imgurl: BaiduEx.localdata.nav5,
 				title: "[More]更多",
@@ -154,7 +155,7 @@ BaiduEx = {
 
 Aming.addFunc({
 	key: "http://www.baidu.com/",
-	similar: false,
+	similar: true,
 	val: function() {
 		// setTimeout(BaiduEx.init, 200);
 		BaiduEx.init();

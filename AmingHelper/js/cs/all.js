@@ -5,8 +5,7 @@ All = {
 	init: function() {
 		Aming.getData(this.key, function(data) {
 			All.localdata = data;
-			if (All.localdata.isShowToTop) {
-
+			if (All.localdata.enabled) {
 				$('.totop_frame').remove();
 
 				$(window).aming_scrolltop({
