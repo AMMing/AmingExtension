@@ -6,12 +6,7 @@ chrome.extension.onRequest.addListener(
 	function(request, sender, sendResponse) {
 		switch (request.type) {
 			case "notif":
-				var notification = window.webkitNotifications.createNotification(
-					'images/64.jpg', // The image.
-					request.title, // The title.
-					request.body // The body.
-				);
-				notification.show();
+				notification.show(request.title, request.body);
 				sendResponse({
 					msg: "notification show."
 				});
@@ -27,4 +22,18 @@ chrome.extension.onRequest.addListener(
 	}
 );
 
-initData();
+chrome.contextMenus.create({
+	"title": "Google+ Source Image",
+	"type": "normal",
+	"contexts": ["image"],
+	"onclick": contextmenus.googlePlusImage()
+});
+// chrome.contextMenus.create({
+// 	"title": "HuaBan Image",
+// 	"type": "normal",
+// 	"contexts": ["image"],
+// 	"onclick": contextmenus.HuaBan()
+// });
+
+aminghelper.initData();
+// aminghelper.checkupdate();

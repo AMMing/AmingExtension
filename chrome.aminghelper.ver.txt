@@ -1,0 +1,5 @@
+jsonpCallback({
+	"verison": "1.0.2.7",
+	"info": "aminghelper new verison.",
+	"downloadurl": "http://www.y2443.com/download/AmingHelper Ver 1.0.2.7.crx"
+})

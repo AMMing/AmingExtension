@@ -1,9 +1,9 @@
 {
   "name": "AMing,自写自用",
-  "version": "1.0.2.7",
+  "version": "1.0.2.8",
   "description": "自写自用，有爱自取.",
   "background": {
-    "scripts": ["js/bg/helper.js", "js/bg/initdata.js", "js/bg/background.js"]
+    "scripts": ["js/core/jquery.js", "js/bg/helper.js", "js/bg/initdata.js", "js/bg/background.js"]
   },
   "browser_action": {
     "name": "AMing"
@@ -22,7 +22,7 @@
   }],
   "manifest_version": 2,
   "web_accessible_resources": [],
-  "permissions": ["tabs", "notifications"],
+  "permissions": ["tabs", "notifications", "contextMenus", "http://www.y2443.com/"],
   "commands": {
     "aming-pin": {
       "suggested_key": {
