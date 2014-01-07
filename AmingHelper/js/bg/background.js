@@ -35,5 +35,14 @@ chrome.contextMenus.create({
 // 	"onclick": contextmenus.HuaBan()
 // });
 
+// chrome.webRequest.onResponseStarted.addListener(
+// 	function(details) {
+// 		// if (details.url.substr(-4) == '.mp3') {
+// 		// console.log(details.url);
+// 		// }
+// 	}
+// );
+
+
 aminghelper.initData();
 // aminghelper.checkupdate();

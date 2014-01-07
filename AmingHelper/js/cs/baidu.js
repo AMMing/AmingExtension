@@ -82,9 +82,13 @@ BaiduEx = {
 			$lg.css("z-index", "999");
 
 			$nv.css("text-indent", "12px");
-			$kw.css("background-color", "rgba(255, 255, 255, 0.8)");
+			$kw.css("background-color", "rgba(255, 255, 255, 0.6)");
 			$lgimg.attr('src', 'http://su.bdimg.com/static/skin/img/logo_white.png');
 			$btn_wr.css('background-color', "transparent");
+
+			$('#s_fm table').css("background-color", "rgba(255, 255, 255, 0.6)");
+			$('#s_fm .ml').css("background-color", "rgba(255, 255, 255, 0.6)");
+
 
 			$nv.animate({
 				"height": 0,

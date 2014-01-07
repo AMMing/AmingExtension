@@ -71,4 +71,18 @@ window.addEventListener('load', function() {
 		all.radius = number_radius.value;
 		localData.Set("all", all);
 	};
+
+
+	/* tieba */
+	var baidutieba = localData.Get("baidutieba");
+	baidutieba_removead.checked = all.enabled;
+
+	baidutieba_removead.onchange = function() {
+		baidutieba.remove_ad = baidutieba_removead.checked;
+		localData.Set("baidutieba", baidutieba);
+	};
+
+
+
+	
 });

@@ -19,6 +19,9 @@ aminghelper = {
 			enabled: true,
 			radius: 30
 		});
+		localData.Init("baidutieba", {
+			remove_ad: true
+		});
 	},
 	checkupdate: function() {
 		$.ajax({
@@ -27,7 +30,6 @@ aminghelper = {
 			url: "http://www.y2443.com/ver/chrome.aminghelper.ver.txt",
 			jsonpCallback: "jsonpCallback",
 			success: function(data) {
-				debugger;
 				if (aminghelper.verison != data.version) {
 					notification.show('new verison.', data.info);
 				}
